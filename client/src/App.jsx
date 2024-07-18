@@ -7,6 +7,7 @@ import Register from "./Pages/Sign/Register"
 import Login from "./Pages/Sign/Login"
 import Appointments from "./Pages/Appointments/Appointments"
 import Gallery from "./Pages/Gallery/Gallery"
+import Footer from "./Components/Footer/Footer"
 
 function App() {
  
@@ -26,6 +27,7 @@ function App() {
        
 
       </Routes>
+      <Footer/>
     </Router>
       
     </>

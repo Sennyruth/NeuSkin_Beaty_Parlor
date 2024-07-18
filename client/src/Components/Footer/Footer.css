@@ -1,0 +1,16 @@
+
+.footer{
+    background-color:#AD88C6;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.media{
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    color:#FFE6E6;
+    font-size: 40px;
+}
