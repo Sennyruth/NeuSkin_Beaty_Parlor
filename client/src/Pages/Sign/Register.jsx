@@ -2,6 +2,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { apiUrl } from "../../Utils/Config";
+// import "./Sign.css"
 // import { apiUrl } from "../../../utils/config.js";
 
 function Register() {
@@ -29,15 +31,15 @@ email: Yup.string()
 
 password: Yup.string()
   .required("password is required")
-  .min(8, "Password should not be less than 8 characters")
-  .max(15, "Password should not be more than 15 characters")
-  .matches(
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/,
-    "Password should contain atleast one uppercase,one lowercase,one digit and one special character"
-  ),
-confirmpassword: Yup.string()
-  .oneOf([Yup.ref("password")], "passwords must match")
-  .required("confirm password"),
+  // .min(8, "Password should not be less than 8 characters")
+  // .max(15, "Password should not be more than 15 characters")
+  // .matches(
+  //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/,
+  //   "Password should contain atleast one uppercase,one lowercase,one digit and one special character"
+  // ),
+// confirmpassword: Yup.string()
+//   .oneOf([Yup.ref("password")], "passwords must match")
+//   .required("confirm password"),
 });
 
 const formik = useFormik({
@@ -51,7 +53,7 @@ initialValues: {
 onSubmit: async (formValues) => {
   setLoading(true);
   try {
-    const response = await fetch("https//localhost:5173/api/user/register", {
+    const response = await fetch(`${ apiUrl}/api/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +66,7 @@ onSubmit: async (formValues) => {
     
     if (data.success === true) {
       setError(false);
-      navigate("/sign in");
+      navigate("/login");
       alert("Registered successfully");
     } else {
       setError(data.message);

@@ -1,0 +1,33 @@
+.form-maincontainer{
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid purple;
+    width: 30rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+input{
+    width: 20rem;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+label{
+    color: white;
+    font-size: 30px;
+}
+.form-container{
+    padding: 10px;
+}
+button{
+    background-color:#FFE6E6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.error{
+    color: red;
+}

@@ -1,8 +1,18 @@
 
 import { Link } from 'react-router-dom'
+// import useAuthorizeStore from '../../authorizeStore'
 import "./Header.css"
 
 function Header() {
+  // const auth = useAuthorizeStore((state) => state.auth);
+  // return (
+  //   <div>
+  //     {auth ? <div>Hello you are logged in</div> : <div>Please login</div>}
+  //   </div>
+  // );
+
+
+
   return (
     <div>
          <header className="header">
