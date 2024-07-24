@@ -3,8 +3,7 @@ import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { apiUrl } from "../../Utils/Config";
-// import "./Sign.css"
-// import { apiUrl } from "../../../utils/config.js";
+
 
 function Register() {
 
@@ -47,8 +46,9 @@ initialValues: {
   firstname: "",
   lastname: "",
   email: "",
+  role:"",
   password: "",
-  confirmpassword: "",
+  confirmpassword: ""
 },
 onSubmit: async (formValues) => {
   setLoading(true);

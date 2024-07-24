@@ -1,10 +1,14 @@
-
+import Hero from "./Hero.jsx"
+import About from "./About.jsx"
+import Products from "./Products.jsx"
 
 function Home() {
   return (
-    <div>
-      Home
-    </div>
+   <>
+   <Hero />
+   <About />
+   <Products />
+   </>
   )
 }
 

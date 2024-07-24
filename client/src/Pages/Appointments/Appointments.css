@@ -1,1 +1,10 @@
-rfce
+.appointment-item{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    width: 30rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+}

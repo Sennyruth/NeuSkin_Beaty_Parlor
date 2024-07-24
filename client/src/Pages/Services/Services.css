@@ -1,0 +1,51 @@
+
+.service-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.text-center{
+    text-align: center;
+    color: blue;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid rgb(226, 105, 125);
+    border-radius:10px;
+    width:20rem;
+    background-color: black;
+    color: white;
+}
+.card-img-top{
+    width:10rem;
+    height: 8rem;
+
+}
+.card img{
+width: 100%;
+height: 100%;
+display: block;
+object-fit: cover;
+
+
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    /* height: 4rem; */
+}
+.card-title{
+    font-size: 1rem;
+    color: white;
+}
+.card-text{
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: purple;
+    padding: 10px;
+}

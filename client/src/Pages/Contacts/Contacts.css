@@ -1,0 +1,57 @@
+label{
+    color: black;
+    font-size: 20px;
+}
+.form-containers{
+    background-color:plum;
+    border: solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: 30rem;
+}
+.contact-container-visit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: solid grey;
+    width: 30%;
+    height: 200px;
+}
+.contact-container-text{
+    text-align: center;
+}
+.contacts-section{
+    background-image: url("../../assets/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.map-form{
+    display: flex;
+    margin-left: 40px;
+    margin-top: 10px;
+    gap: 3rem;
+
+}
+.contact-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+
+}
+.contact-icons{
+    font-size: 40px;
+    color: #E90074;
+    text-align: center;
+}
+.cont-text{
+    font-size: 1rem;
+    color: #E90074;
+}

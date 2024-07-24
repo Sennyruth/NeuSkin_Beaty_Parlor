@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 
 export const createUser = async (req, res ) => {
     try {
-      const { firstname, lastname, email, password } = req.body;
+      const { firstname, lastname, email,role, password } = req.body;
       if (!firstname)
         return res
           .status(400)
@@ -41,6 +41,7 @@ export const createUser = async (req, res ) => {
           firstname: firstname,
           lastname: lastname,
           email: email,
+          role: role,
           password: hashedPassword,
         },
       });
@@ -65,7 +66,7 @@ export const createUser = async (req, res ) => {
             firstname: newUser.firstname,
             lastname: newUser.lastname,
             email: newUser.email,
-  
+            role: newUser.role
           }
           const token = jwt.sign( payload, process.env.JWT_SECRET, {
             expiresIn: "1h",
@@ -85,6 +86,41 @@ export const createUser = async (req, res ) => {
       res.status(500).json({ success: false, message: error.message });
     }
   };
+
+  export const getAllUsers = async (req,res)=>{
+    try {
+      const users = await prisma.user.findMany();
+      res.status(200).json({success:true, data:users})
+
+      
+    } catch (error) {
+      res.status(500).json({success:false, message:error.message})
+
+      
+    }
+  }
+  export const deleteUser = async (req, res) => {
+    try {
+      const id= req.params.id;
+      const user = await prisma.user.delete({
+        where:{ id:id },
+        select:{
+          id:true,
+          firstname:true,
+          lastname:true,
+          email:true,
+          role:true
+        },
+        });
+        res.status(200).json({ success: true, data: user });
+
+      
+        } catch (error) {
+          res.status(500).json({ success: false, message: error.message });
+          }
+          };
+  
+  
   
   
   

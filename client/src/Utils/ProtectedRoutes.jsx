@@ -1,5 +1,5 @@
 import { Outlet, Navigate } from "react-router-dom";
-import useAuthorizeStore from "../authorizeStore.js";
+import useAuthorizeStore from "../Pages/Store/authorizeStore";
 
 const ProtectedRoutes = () =>{
     const authorizeStore = useAuthorizeStore((state) => state.auth);

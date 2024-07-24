@@ -12,25 +12,29 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model User{
-  id String @id @default(uuid())
-  firstname String
-  lastname String
-  email String 
-  password String
+
+model User {
+  id           String         @id @default(uuid())
+  firstname    String
+  lastname     String
+  email        String
+  role         String
+  password     String
   Appointments Appointments[]
-  
- @@unique([email])
+
+  @@unique([email])
   @@map("users_table")
 }
-model Appointments{
-  id String @id @default(uuid())
-  date String
-  time String
-  number Int
-  service String
-  userId String
-  user User @relation(fields: [userId], references: [id])
 
-@@map("appointments_table")
+model Appointments {
+  id          String @id @default(uuid())
+  date        String
+  time        String
+  number      Int
+  service     String
+  userId      String
+  clientEmail String
+  user        User   @relation(fields: [userId], references: [id])
+
+  @@map("appointments_table")
 }
